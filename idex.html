@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار إلكتروني - عبد الله قاعود</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* وضع الصورة كخلفية للموقع */
+            background-image: url('WhatsApp Image 2026-08-30 at 8.11.40 PM (1).jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        /* حاوية الاختبار مع خلفية полу-شفافة */
+        .quiz-container {
+            background-color: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 680px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: #007bff;
+            margin: 0 0 8px 0;
+            font-size: 26px;
+        }
+        p.subtitle {
+            color: #444;
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(249, 249, 249, 0.9);
+            border-right: 4px solid #007bff;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .question p {
+            font-weight: bold;
+            margin-top: 0;
+            color: #222;
+            font-size: 16px;
+        }
+        .options label {
+            display: block;
+            margin: 8px 0;
+            padding: 10px 14px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .options label:hover {
+            background-color: #e9ecef;
+            border-color: #007bff;
+        }
+        .options input {
+            margin-left: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 6px;
+            display: none;
+        }
+        .pass { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .fail { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <header>
+        <h1>اختبار إلكتروني تفاعلي</h1>
+        <p class="subtitle">إعداد: الأستاذ عبد الله قاعود</p>
+    </header>
+
+    <form id="quizForm">
+        <!-- سؤال 1 -->
+        <div class="question">
+            <p>1. ما هي عاصمة جمهورية مصر العربية؟</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="أ"> الإسكندرية</label>
+                <label><input type="radio" name="q1" value="ب"> القاهرة</label>
+                <label><input type="radio" name="q1" value="ج"> الجيزة</label>
+            </div>
+        </div>
+
+        <!-- سؤال 2 -->
+        <div class="question">
+            <p>2. كم عدد كواكب المجموعة الشمسية؟</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="أ"> 7 كواكب</label>
+                <label><input type="radio" name="q2" value="ب"> 8 كواكب</label>
+                <label><input type="radio" name="q2" value="ج"> 9 كواكب</label>
+            </div>
+        </div>
+
+        <!-- سؤال 3 -->
+        <div class="question">
+            <p>3. ما هو أطول نهر في العالم؟</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="أ"> نهر النيل</label>
+                <label><input type="radio" name="q3" value="ب"> نهر أمازون</label>
+                <label><input type="radio" name="q3" value="ج"> نهر يانغتسي</label>
+            </div>
+        </div>
+
+        <!-- سؤال 4 -->
+        <div class="question">
+            <p>4. ما هو العنصر الكيميائي الذي رمزه "O"؟</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="أ"> الهيدروجين</label>
+                <label><input type="radio" name="q4" value="ب"> النيتروجين</label>
+                <label><input type="radio" name="q4" value="ج"> الأكسجين</label>
+            </div>
+        </div>
+
+        <!-- سؤال 5 -->
+        <div class="question">
+            <p>5. كم عدد أضلاع المثلث؟</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="أ"> 3 أضلاع</label>
+                <label><input type="radio" name="q5" value="ب"> 4 أضلاع</label>
+                <label><input type="radio" name="q5" value="ج"> 5 أضلاع</label>
+            </div>
+        </div>
+
+        <!-- سؤال 6 -->
+        <div class="question">
+            <p>6. ما هي أكبر القارات مساحة؟</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="أ"> إفريقيا</label>
+                <label><input type="radio" name="q6" value="ب"> آسيا</label>
+                <label><input type="radio" name="q6" value="ج"> أوروبا</label>
+            </div>
+        </div>
+
+        <!-- سؤال 7 -->
+        <div class="question">
+            <p>7. ما هو الناتج من 12 × 12؟</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="أ"> 124</label>
+                <label><input type="radio" name="q7" value="ب"> 144</label>
+                <label><input type="radio" name="q7" value="ج"> 164</label>
+            </div>
+        </div>
+
+        <!-- سؤال 8 -->
+        <div class="question">
+            <p>8. أي جهاز يُستخدم لقياس درجة الحرارة؟</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="أ"> البارومتر</label>
+                <label><input type="radio" name="q8" value="ب"> الترمومتر</label>
+                <label><input type="radio" name="q8" value="ج"> الميكروسكوب</label>
+            </div>
+        </div>
+
+        <!-- سؤال 9 -->
+        <div class="question">
+            <p>9. كم عدد السور في القرآن الكريم؟</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="أ"> 114 سورة</label>
+                <label><input type="radio" name="q9" value="ب"> 120 سورة</label>
+                <label><input type="radio" name="q9" value="ج"> 110 سور</label>
+            </div>
+        </div>
+
+        <!-- سؤال 10 -->
+        <div class="question">
+            <p>10. ما هي أسرع الكائنات الحية على البر؟</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="أ"> الأسد</label>
+                <label><input type="radio" name="q10" value="ب"> الفهد</label>
+                <label><input type="radio" name="q10" value="ج"> الغزال</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="calculateScore()">إنهاء الاختبار وعرض النتيجة</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateScore() {
+        const answers = {
+            q1: 'ب',
+            q2: 'ب',
+            q3: 'أ',
+            q4: 'ج',
+            q5: 'أ',
+            q6: 'ب',
+            q7: 'ب',
+            q8: 'ب',
+            q9: 'أ',
+            q10: 'ب'
+        };
+
+        let score = 0;
+        const totalQuestions = 10;
+        const form = document.forms['quizForm'];
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            const userAnswer = form['q' + i].value;
+            if (userAnswer === answers['q' + i]) {
+                score++;
+            }
+        }
+
+        const resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        
+        if (score >= 5) {
+            resultDiv.className = 'pass';
+            resultDiv.innerHTML = `أحسنت! درجتك هي: ${score} من ${totalQuestions}`;
+        } else {
+            resultDiv.className = 'fail';
+            resultDiv.innerHTML = `حاول مرة أخرى. درجتك هي: ${score} من ${totalQuestions}`;
+        }
+    }
+</script>
+
+</body>
+</html>
